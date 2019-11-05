@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otchet", "Otchet.csproj", "{CD107FE1-3418-4551-A65E-526A3FAB65E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeekReport", "WeekReport.csproj", "{CD107FE1-3418-4551-A65E-526A3FAB65E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

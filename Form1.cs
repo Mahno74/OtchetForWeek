@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 
 
-namespace Otchet
+namespace WeekReport
 {
     public partial class Form1 : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace Otchet
+﻿namespace WeekReport
 {
     partial class Form1
     {
@@ -136,7 +136,7 @@
             // 
             // saveToolStripMenuItem
             // 
-            this.saveToolStripMenuItem.Image = global::Otchet.Properties.Resources.savedisk_floppydisk_guardar_1543;
+            this.saveToolStripMenuItem.Image = global::WeekReport.Properties.Resources.savedisk_floppydisk_guardar_1543;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.saveToolStripMenuItem.Text = "Сохранить";
@@ -144,7 +144,7 @@
             // 
             // начатьНовуюНеделюToolStripMenuItem
             // 
-            this.начатьНовуюНеделюToolStripMenuItem.Image = global::Otchet.Properties.Resources.new_25355;
+            this.начатьНовуюНеделюToolStripMenuItem.Image = global::WeekReport.Properties.Resources.new_25355;
             this.начатьНовуюНеделюToolStripMenuItem.Name = "начатьНовуюНеделюToolStripMenuItem";
             this.начатьНовуюНеделюToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.начатьНовуюНеделюToolStripMenuItem.Text = "Начать новую неделю";
@@ -152,7 +152,7 @@
             // 
             // оПрограммеToolStripMenuItem
             // 
-            this.оПрограммеToolStripMenuItem.Image = global::Otchet.Properties.Resources.information_info_1565;
+            this.оПрограммеToolStripMenuItem.Image = global::WeekReport.Properties.Resources.information_info_1565;
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
@@ -181,7 +181,7 @@
             // 
             // dateNowStripStatus
             // 
-            this.dateNowStripStatus.Image = global::Otchet.Properties.Resources.date_10131;
+            this.dateNowStripStatus.Image = global::WeekReport.Properties.Resources.date_10131;
             this.dateNowStripStatus.Name = "dateNowStripStatus";
             this.dateNowStripStatus.Size = new System.Drawing.Size(134, 17);
             this.dateNowStripStatus.Text = "toolStripStatusLabel1";

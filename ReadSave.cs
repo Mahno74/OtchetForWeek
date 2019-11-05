@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Otchet
+namespace WeekReport
 {
     static class ReadSave
     {

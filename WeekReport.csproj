@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CD107FE1-3418-4551-A65E-526A3FAB65E4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Otchet</RootNamespace>
-    <AssemblyName>Otchet</AssemblyName>
+    <RootNamespace>WeekReport</RootNamespace>
+    <AssemblyName>WeekReport</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
