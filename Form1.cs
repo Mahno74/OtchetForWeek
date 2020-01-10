@@ -61,7 +61,7 @@ namespace WeekReport
             if (weeklyDealTextBox.Text != String.Empty)  //Если есть повторяемые задачи то выводим их в бокс
             {
                 otchetTextBox.Text += "\r\n" + weeklyDealTextBox.Text;
-                ReadSave.SaveText(_otchetFileName, weeklyDealTextBox.Text);
+                ReadSave.SaveText(_otchetFileName, "\r\n" + weeklyDealTextBox.Text);
             }
             countWeekDealNumericUpDown.Value = 0;
             RollDown(); //Перемотка в конец
