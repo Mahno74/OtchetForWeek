@@ -38,14 +38,13 @@ namespace WeekReport
             }
         }
 
-        public static void SaveData(string filename, string weekNumber, string numberPp, string weeklyDeal, bool orfo)
+        public static void SaveData(string filename, string weekNumber, string weeklyDeal, bool orfo)
         {
             try
             {
                 using (BinaryWriter writer = new BinaryWriter(File.Open(filename, FileMode.OpenOrCreate)))
                 {
                     writer.Write(weekNumber);
-                    writer.Write(numberPp);
                     writer.Write(weeklyDeal);
                     writer.Write(orfo);
                 }

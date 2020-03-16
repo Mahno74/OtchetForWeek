@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.weeklyDealTextBox = new System.Windows.Forms.TextBox();
-            this.countWeekDealNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.otchetTextBox = new System.Windows.Forms.TextBox();
             this.inputTextBox = new System.Windows.Forms.TextBox();
             this.onControlButton = new System.Windows.Forms.Button();
@@ -40,15 +39,10 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.начатьНовуюНеделюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orfoCheckBox = new System.Windows.Forms.CheckBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.dateNowStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.weekNowStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.countWeekDealNumericUpDown)).BeginInit();
+            this.ToolStripMenuItemOrphoCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -61,14 +55,6 @@
             this.weeklyDealTextBox.Name = "weeklyDealTextBox";
             this.weeklyDealTextBox.Size = new System.Drawing.Size(532, 26);
             this.weeklyDealTextBox.TabIndex = 22;
-            // 
-            // countWeekDealNumericUpDown
-            // 
-            this.countWeekDealNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.countWeekDealNumericUpDown.Location = new System.Drawing.Point(6, 360);
-            this.countWeekDealNumericUpDown.Name = "countWeekDealNumericUpDown";
-            this.countWeekDealNumericUpDown.Size = new System.Drawing.Size(39, 20);
-            this.countWeekDealNumericUpDown.TabIndex = 19;
             // 
             // otchetTextBox
             // 
@@ -84,12 +70,12 @@
             // inputTextBox
             // 
             this.inputTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.inputTextBox.Location = new System.Drawing.Point(70, 393);
+            this.inputTextBox.Location = new System.Drawing.Point(18, 393);
             this.inputTextBox.MaximumSize = new System.Drawing.Size(812, 33);
             this.inputTextBox.Name = "inputTextBox";
-            this.inputTextBox.Size = new System.Drawing.Size(480, 20);
+            this.inputTextBox.Size = new System.Drawing.Size(532, 20);
             this.inputTextBox.TabIndex = 13;
-            this.inputTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressInTextBox1);
+            this.inputTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressInTextBox);
             // 
             // onControlButton
             // 
@@ -129,6 +115,7 @@
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
             this.начатьНовуюНеделюToolStripMenuItem,
+            this.ToolStripMenuItemOrphoCheck,
             this.оПрограммеToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
@@ -138,7 +125,7 @@
             // 
             this.saveToolStripMenuItem.Image = global::WeekReport.Properties.Resources.savedisk_floppydisk_guardar_1543;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.saveToolStripMenuItem.Text = "Сохранить";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.MenuSave);
             // 
@@ -146,7 +133,7 @@
             // 
             this.начатьНовуюНеделюToolStripMenuItem.Image = global::WeekReport.Properties.Resources.new_25355;
             this.начатьНовуюНеделюToolStripMenuItem.Name = "начатьНовуюНеделюToolStripMenuItem";
-            this.начатьНовуюНеделюToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.начатьНовуюНеделюToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.начатьНовуюНеделюToolStripMenuItem.Text = "Начать новую неделю";
             this.начатьНовуюНеделюToolStripMenuItem.Click += new System.EventHandler(this.NewWeekMenuItem_Click);
             // 
@@ -154,47 +141,12 @@
             // 
             this.оПрограммеToolStripMenuItem.Image = global::WeekReport.Properties.Resources.information_info_1565;
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
-            // orfoCheckBox
-            // 
-            this.orfoCheckBox.AutoSize = true;
-            this.orfoCheckBox.Location = new System.Drawing.Point(645, 430);
-            this.orfoCheckBox.Name = "orfoCheckBox";
-            this.orfoCheckBox.Size = new System.Drawing.Size(142, 17);
-            this.orfoCheckBox.TabIndex = 28;
-            this.orfoCheckBox.Text = "Проверка орфографии";
-            this.orfoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dateNowStripStatus,
-            this.weekNowStripStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
-            this.statusStrip1.TabIndex = 29;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // dateNowStripStatus
-            // 
-            this.dateNowStripStatus.Image = global::WeekReport.Properties.Resources.date_10131;
-            this.dateNowStripStatus.Name = "dateNowStripStatus";
-            this.dateNowStripStatus.Size = new System.Drawing.Size(134, 17);
-            this.dateNowStripStatus.Text = "toolStripStatusLabel1";
-            // 
-            // weekNowStripStatusLabel
-            // 
-            this.weekNowStripStatusLabel.Name = "weekNowStripStatusLabel";
-            this.weekNowStripStatusLabel.Size = new System.Drawing.Size(118, 17);
-            this.weekNowStripStatusLabel.Text = "toolStripStatusLabel2";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.countWeekDealNumericUpDown);
             this.groupBox1.Controls.Add(this.weeklyDealTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(12, 33);
@@ -206,8 +158,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.onControlButton);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(567, 33);
@@ -217,21 +168,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "На контроле";
             // 
+            // ToolStripMenuItemOrphoCheck
+            // 
+            this.ToolStripMenuItemOrphoCheck.CheckOnClick = true;
+            this.ToolStripMenuItemOrphoCheck.Name = "ToolStripMenuItemOrphoCheck";
+            this.ToolStripMenuItemOrphoCheck.Size = new System.Drawing.Size(210, 22);
+            this.ToolStripMenuItemOrphoCheck.Text = "Проверять орфографию";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 433);
             this.Controls.Add(this.inputTextBox);
             this.Controls.Add(this.otchetTextBox);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.orfoCheckBox);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.controlTextBox);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.groupBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
@@ -240,11 +196,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.countWeekDealNumericUpDown)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -255,7 +208,6 @@
 
         #endregion
         internal System.Windows.Forms.TextBox weeklyDealTextBox;
-        internal System.Windows.Forms.NumericUpDown countWeekDealNumericUpDown;
         internal System.Windows.Forms.TextBox otchetTextBox;
         internal System.Windows.Forms.TextBox inputTextBox;
         internal System.Windows.Forms.Button onControlButton;
@@ -265,12 +217,9 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem начатьНовуюНеделюToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.CheckBox orfoCheckBox;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel dateNowStripStatus;
-        private System.Windows.Forms.ToolStripStatusLabel weekNowStripStatusLabel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOrphoCheck;
     }
 }
 
