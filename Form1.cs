@@ -69,7 +69,7 @@ namespace WeekReport
                 //otchetTextBox.Text += Environment.NewLine+ "- " + ReadSave.retransText(s) + ";"; //текст с перевдом
                 else
                     newDeal = Environment.NewLine + @"- " + newDeal + @";";
-                otchetTextBox.Text += newDeal;
+                otchetTextBox.AppendText(newDeal);
                 RollDown();
                 ReadSave.SaveText(_otchetFileName, newDeal); //Сохраняем строку в файл отчета
             }

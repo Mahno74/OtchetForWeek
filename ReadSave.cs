@@ -37,22 +37,6 @@ namespace WeekReport
                 }
             }
         }
-
-        public static void SaveData(string filename, string weekNumber, string weeklyDeal, bool orfo)
-        {
-            try
-            {
-                using (BinaryWriter writer = new BinaryWriter(File.Open(filename, FileMode.OpenOrCreate)))
-                {
-                    writer.Write(weekNumber);
-                    writer.Write(weeklyDeal);
-                    writer.Write(orfo);
-                }
-            }
-            catch (Exception) { return; }
-
-
-        }
         public static async void SaveText(string filename, string textFromBox, bool addOneLine = true)
         {
             using (StreamWriter writer = new StreamWriter(filename, addOneLine, Encoding.GetEncoding(1251)))
