@@ -58,5 +58,29 @@ namespace WeekReport.Properties {
                 this["weeklyDeal"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int xLeft {
+            get {
+                return ((int)(this["xLeft"]));
+            }
+            set {
+                this["xLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int xTop {
+            get {
+                return ((int)(this["xTop"]));
+            }
+            set {
+                this["xTop"] = value;
+            }
+        }
     }
 }

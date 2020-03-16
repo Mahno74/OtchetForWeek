@@ -18,12 +18,16 @@ namespace WeekReport
         public Form1()
         {
             InitializeComponent();
+
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(System.Globalization.CultureInfo.CreateSpecificCulture("Ru")); // переключаемся на русский
             saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S; //задали горячую клавишу для сохранения CTRL-S
             if (!ReadSave.FirstLaunchCheck(_otchetFileName, _controlFileName)) Environment.Exit(0); //проверка на первыз запуск программы и отсутвие файлов с отчетами
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Left = Settings.Default.xLeft; //востанавливаем положение последней позиции окна приложения
+            this.Top = Settings.Default.xTop;
+
             StringBuilder headerText = new StringBuilder(); //делаем шапку
             headerText.Append(Environment.MachineName + " ");
             headerText.Append("Сегодня " + DateTime.Now.ToLongDateString()+ " ");
@@ -115,9 +119,11 @@ namespace WeekReport
         //Сохраняем настройки при выходе
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Settings.Default.weeklyDeal = weeklyDealTextBox.Text;
-            Settings.Default.orfoCheck= ToolStripMenuItemOrphoCheck.Checked;
-            Settings.Default.weekNow = weekNumberNow;
+            Settings.Default.weeklyDeal = weeklyDealTextBox.Text; //запоминаем повторяющиеся дела
+            Settings.Default.orfoCheck= ToolStripMenuItemOrphoCheck.Checked; //запоминаем проверку офорграфии
+            Settings.Default.weekNow = weekNumberNow; //запоминаем неделю
+            Settings.Default.xLeft = this.Left; //запоминаем положение окна
+            Settings.Default.xTop = this.Top;
             Settings.Default.Save();
         }
         private void Form1_Shown(object sender, EventArgs e) => RollDown(); //Перемотка в конец при запуске
