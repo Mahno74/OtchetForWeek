@@ -11,18 +11,17 @@ namespace WeekReport
     {
         int weekNumberStore = Settings.Default.weekNow; //номер недели последнего запуска программы
         public int weekNumberNow = new GregorianCalendar().GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstFullWeek, DayOfWeek.Thursday); //номер текущей недели
-
-        private readonly string _otchetFileName = System.Environment.MachineName + "_otchet.txt"; //задаем индивидуальное имя производное от имени машины для файла отчета
-        private readonly string _controlFileName = System.Environment.MachineName + "_control.txt"; //задаем индивидуальное имя производное от имени машины для файла контроля
+        public string _otchetFileName, _controlFileName; //имена файлов с отчетами
         //private readonly string _dataFileName = System.Environment.MachineName + " data.bin"; //задаем индивидуальное имя производное от имени машины для файла данных
         public Form1()
         {
             InitializeComponent();
-
+            ReportFilenameGenerator(); //герерируем имена файлов для хранения отчетов
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(System.Globalization.CultureInfo.CreateSpecificCulture("Ru")); // переключаемся на русский
             saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S; //задали горячую клавишу для сохранения CTRL-S
             if (!ReadSave.FirstLaunchCheck(_otchetFileName, _controlFileName)) Environment.Exit(0); //проверка на первыз запуск программы и отсутвие файлов с отчетами
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Left = Settings.Default.xLeft; //востанавливаем положение последней позиции окна приложения
@@ -104,7 +103,16 @@ namespace WeekReport
             controlTextBox.SelectionStart = controlTextBox.Text.Length; controlTextBox.ScrollToCaret();
             inputTextBox.Clear(); inputTextBox.Select();
         }
-
+        public void ReportFilenameGenerator() //генерация инидивидуальных имен файлов с отчетами
+        {
+            _otchetFileName = System.Environment.MachineName + "_otchet.txt"; //задаем индивидуальное имя производное от имени машины для файла отчета
+            _controlFileName = System.Environment.MachineName + "_control.txt"; //задаем индивидуаль  
+            if (System.Environment.MachineName == "HOME_2017")
+            {
+                _otchetFileName = "DADMIN_otchet"; //задаем индивидуальное имя производное от имени машины для файла отчета
+                _controlFileName = "DADMIN_control"; //задаем индивидуаль  
+            }
+        }
         private string Orfo(string inputText) //проверка орфографии
         {
             var w = new Microsoft.Office.Interop.Word.Application { Visible = false };
