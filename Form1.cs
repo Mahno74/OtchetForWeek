@@ -107,7 +107,7 @@ namespace WeekReport
         {
             _otchetFileName = System.Environment.MachineName + "_otchet.txt"; //задаем индивидуальное имя производное от имени машины для файла отчета
             _controlFileName = System.Environment.MachineName + "_control.txt"; //задаем индивидуаль  
-            if (System.Environment.MachineName == "HOME_2017")
+            if (System.Environment.MachineName == "HOME2017")
             {
                 _otchetFileName = "DADMIN_otchet"; //задаем индивидуальное имя производное от имени машины для файла отчета
                 _controlFileName = "DADMIN_control"; //задаем индивидуаль  
